@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:staj_projectt/src/constants/drawer_bar.dart';
 
 import '../../characters/data/character_repository.dart';
 import '../../characters/presentation/characters_listview.dart';
@@ -25,8 +27,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     print('rendereD');
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
-        title: const Text("homescreen"),
+        backgroundColor: const Color.fromARGB(255, 198, 149, 145),
+        title: Text(
+          "CHARACTERS OF MARVEL",
+          style: GoogleFonts.marvel(fontWeight: FontWeight.w900, fontSize: 25),
+        ),
       ),
       body: Center(
         child: RefreshIndicator(
@@ -41,6 +46,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           child: CharactersListview(),
         ),
       ),
+      drawer: DrawerBar(),
     );
   }
 }

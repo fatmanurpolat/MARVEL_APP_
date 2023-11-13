@@ -1,8 +1,9 @@
 import 'dart:async';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
+import 'package:staj_projectt/firebase_options.dart';
 
 import 'src/core/locator.dart';
 
@@ -15,9 +16,12 @@ void main() async {
   // * https://docs.flutter.dev/testing/errors
   await runZonedGuarded(() async {
     WidgetsFlutterBinding.ensureInitialized();
+      await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
     setup();
     // turn off the # in the URLs on the web
-    GoRouter.setUrlPathStrategy(UrlPathStrategy.path);
+    // GoRouter.setUrlPathStrategy(UrlPathStrategy.path);
 
     final characterRepository = getIt<CharacterRepository>();
 
@@ -33,7 +37,7 @@ void main() async {
     ErrorWidget.builder = (FlutterErrorDetails details) {
       return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.red.shade900,
           title: const Text('An error occurred'),
         ),
         body: Column(

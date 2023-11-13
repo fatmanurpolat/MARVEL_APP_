@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "358049174702",
+    "firebase_url": "https://firebase-authoc-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "firebase-authoc",
+    "storage_bucket": "firebase-authoc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358049174702:android:688957530236cafd8b493f",
+        "android_client_info": {
+          "package_name": "com.example.firebase_son_baglanti"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "358049174702-rmohmhk1c3mgruld3jcor8qnbgpd5bk4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBO5h5Cp63kAVatZh81iCNM55rsP8Y0xAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358049174702-rmohmhk1c3mgruld3jcor8qnbgpd5bk4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "358049174702-p6r8qoc64rne3gi58cd9lkvel4qmaod9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.firebaseSonBaglanti"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358049174702:android:9ac8bd56ef1a5d238b493f",
+        "android_client_info": {
+          "package_name": "com.netix.staj_projectt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "358049174702-rmohmhk1c3mgruld3jcor8qnbgpd5bk4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBO5h5Cp63kAVatZh81iCNM55rsP8Y0xAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358049174702-rmohmhk1c3mgruld3jcor8qnbgpd5bk4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "358049174702-p6r8qoc64rne3gi58cd9lkvel4qmaod9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.firebaseSonBaglanti"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

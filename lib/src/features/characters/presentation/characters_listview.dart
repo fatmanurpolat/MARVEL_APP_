@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:staj_projectt/src/routing/app_router.dart';
-import 'package:go_router/src/go_route.dart';
 
 import '../data/character_repository.dart';
 
@@ -23,33 +23,42 @@ class CharactersListview extends ConsumerWidget {
         data: (marvelResult) {
           return ListView(
             children: marvelResult.data!.results!
-                .map((e) => Card(
-                      elevation: 8,
-                      clipBehavior: Clip.antiAlias,
-                      shadowColor: Colors.red,
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(200),
-                        ),
-                        side: BorderSide(
-                          color: Colors.red,
-                          width: 1,
-                        ),
+                .map(
+                  (e) => Card(
+                    elevation: 8,
+                    clipBehavior: Clip.antiAlias,
+                    shadowColor: Colors.red.shade900,
+                    shape:  RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(200),
                       ),
-                      child: ListTile(
-                          leading: CachedNetworkImage(
-                              imageUrl:
-                                  "${e?.thumbnail?.path}.${e?.thumbnail?.extension}",
-                              placeholder: (context, url) =>
-                                  const CircularProgressIndicator(),
-                              errorWidget: (context, url, error) =>
-                                  const Icon(Icons.error)),
-                          textColor: const Color.fromARGB(255, 118, 11, 11),
-                          title: Text(e?.name ?? ""),
-                          onTap: () {
-                            GoRouter.of(context).go('/detail?id=${e?.id}');
-                          }),
-                    ))
+                      side: BorderSide(
+                        color: Colors.red.shade900,
+                        width: 1,
+                      ),
+                    ),
+                    child: ListTile(
+                      leading: CachedNetworkImage(
+                          imageUrl:
+                              "${e?.thumbnail?.path}.${e?.thumbnail?.extension}",
+                          placeholder: (context, url) =>
+                              const CircularProgressIndicator(),
+                          errorWidget: (context, url, error) =>
+                              const Icon(Icons.error)),
+                      textColor: const Color.fromARGB(255, 118, 11, 11),
+                      title: Text(
+                        e?.name ?? "",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.marvel(
+                            fontWeight: FontWeight.w900, fontSize: 20),
+                      ),
+                      onTap: () {
+                        Get.toNamed('/detail?id=${e?.id}');
+                        // GoRouter.of(context).go('/detail?id=${e?.id}');
+                      },
+                    ),
+                  ),
+                )
                 .toList(),
           );
         },
